@@ -1,4 +1,5 @@
-![go](/static/img.gif)
+![sort image](https://asset.cloudinary.com/dt97wyjg6/aee881aa7cf3daa566cd5b0496857220)
+
 # Sort
 The sort package sorts data(both string and int) with their number of occurrences and returns the desired data length in descending order with no duplicates of values.
 # Use cases range from:
