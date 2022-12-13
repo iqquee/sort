@@ -1,7 +1,7 @@
 # Sort
 The sort package sorts data(both string and int) with their number of occurance and returns the desired lenght of data in descending order.
 # Installation
-To install the sort package, you need to install [Go](https://golang.org/) and set your Go workspace first.
+To install the sort package, you need to first install [Go](https://golang.org/) and set your Go workspace.
 1. You can use the below Go command to install sort
 ```sh
 $ go get -u github.com/hisyntax/sort
@@ -11,7 +11,7 @@ $ go get -u github.com/hisyntax/sort
 import "github.com/hisyntax/sort/x"
 ```
 ## Note : Both methods in this package returns one (1) value:
-- [x] The total sorted array objects.
+- [x] The sorted array objects in descending order by the length specified.
 
 # Quick start
 ```sh
@@ -55,10 +55,10 @@ import (
 
 func main() {
 
-	arr := []string{"by","hello", "me", "come","hello" ,"by", "buy", "by", "come", "hello"}
+	arr := []string{"by", "me", "come", "by", "me", "hello", "hey", "hey", "me", "buy", "by", "come", "hello", "go"}
 
      //pass in the array to be sorted and the desired length of data to be returned in descending order
-	sortedString := sorter.SortString(arr, 2)
+	sortedString := sorter.SortString(arr, 3)
 	fmt.Printf("This is the sorted string data: %v\n", sortedString)
 
 }

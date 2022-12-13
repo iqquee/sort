@@ -169,6 +169,7 @@ func SortString(data []string, lenght int) []StringMapper {
 	fmt.Printf("This is the sorted value: %v\n", sortedValues)
 
 	var sortedObj []StringMapper
+	var newSortedObj []StringMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
 
 	if lenght == 0 {
@@ -207,14 +208,14 @@ func SortString(data []string, lenght int) []StringMapper {
 			fmt.Printf("This is the sorted value at i index: %v\n", sortedValues[i])
 			for _, x := range dataObjArray {
 
-				if sortedObj == nil {
+				if newSortedObj == nil {
 					if x.Occurance == sortedValues[i] {
-						sortedObj = append(sortedObj, x)
+						newSortedObj = append(newSortedObj, x)
 						fmt.Printf("This is the first value added to the string array: %v\n", x.Key)
 					}
 				} else {
 					var available bool
-					for _, avail := range sortedObj {
+					for _, avail := range newSortedObj {
 						if avail.Key == x.Key {
 							available = true
 						}
@@ -222,13 +223,17 @@ func SortString(data []string, lenght int) []StringMapper {
 
 					if !available {
 						if x.Occurance == sortedValues[i] {
-							sortedObj = append(sortedObj, x)
+							newSortedObj = append(newSortedObj, x)
 							fmt.Printf("This is the other values added to the string array: %v\n", x.Key)
 						}
 					}
 				}
 
 			}
+		}
+
+		for i := 0; i < lenght; i++ {
+			sortedObj = append(sortedObj, newSortedObj[i])
 		}
 
 	}
