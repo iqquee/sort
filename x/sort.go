@@ -1,7 +1,5 @@
 package x
 
-import "fmt"
-
 type IntMapper struct {
 	Key       int `json:"key"`
 	Occurance int `json:"occurance"`
@@ -50,8 +48,6 @@ func SortInt(data []int, lenght int) []IntMapper {
 
 	sortedValues := sort(values)
 
-	fmt.Printf("This is the sorted value: %v\n", sortedValues)
-
 	var sortedObj []IntMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
 
@@ -63,8 +59,6 @@ func SortInt(data []int, lenght int) []IntMapper {
 				if sortedObj == nil {
 					if x.Occurance == sortedValues[i] {
 						sortedObj = append(sortedObj, x)
-
-						fmt.Printf("This is the added value: %v\n", x.Key)
 					}
 				} else {
 					var available bool
@@ -77,7 +71,6 @@ func SortInt(data []int, lenght int) []IntMapper {
 					if !available {
 						if x.Occurance == sortedValues[i] {
 							sortedObj = append(sortedObj, x)
-							fmt.Printf("This is the added value: %v\n", x.Key)
 						}
 					}
 				}
@@ -88,7 +81,6 @@ func SortInt(data []int, lenght int) []IntMapper {
 	} else if len(sortedValues) > lenght {
 
 		for i := 0; i < lenght; i++ {
-			fmt.Printf("This is the sorted value at i index: %v\n", sortedValues[i])
 			for _, x := range dataObjArray {
 
 				if sortedObj == nil {
@@ -166,8 +158,6 @@ func SortString(data []string, lenght int) []StringMapper {
 
 	sortedValues := sort(values)
 
-	fmt.Printf("This is the sorted value: %v\n", sortedValues)
-
 	var sortedObj []StringMapper
 	var newSortedObj []StringMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
@@ -180,8 +170,6 @@ func SortString(data []string, lenght int) []StringMapper {
 				if sortedObj == nil {
 					if x.Occurance == sortedValues[i] {
 						sortedObj = append(sortedObj, x)
-
-						fmt.Printf("This is the added value: %v\n", x.Key)
 					}
 				} else {
 					var available bool
@@ -194,7 +182,6 @@ func SortString(data []string, lenght int) []StringMapper {
 					if !available {
 						if x.Occurance == sortedValues[i] {
 							sortedObj = append(sortedObj, x)
-							fmt.Printf("This is the added value: %v\n", x.Key)
 						}
 					}
 				}
@@ -205,13 +192,12 @@ func SortString(data []string, lenght int) []StringMapper {
 	} else if len(sortedValues) > lenght {
 
 		for i := 0; i < lenght; i++ {
-			fmt.Printf("This is the sorted value at i index: %v\n", sortedValues[i])
+
 			for _, x := range dataObjArray {
 
 				if newSortedObj == nil {
 					if x.Occurance == sortedValues[i] {
 						newSortedObj = append(newSortedObj, x)
-						fmt.Printf("This is the first value added to the string array: %v\n", x.Key)
 					}
 				} else {
 					var available bool
@@ -224,7 +210,6 @@ func SortString(data []string, lenght int) []StringMapper {
 					if !available {
 						if x.Occurance == sortedValues[i] {
 							newSortedObj = append(newSortedObj, x)
-							fmt.Printf("This is the other values added to the string array: %v\n", x.Key)
 						}
 					}
 				}
