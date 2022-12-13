@@ -1,15 +1,13 @@
 package x
 
-import (
-	"errors"
-)
+import "fmt"
 
 type IntMapper struct {
 	Key       int `json:"key"`
 	Occurance int `json:"occurance"`
 }
 
-func SortInt(data []int, lenght int) ([]IntMapper, []IntMapper, error) {
+func SortInt(data []int, lenght int) []IntMapper {
 	var occuranceCounter int
 	var dataObjArray []IntMapper
 	var dataObj IntMapper
@@ -52,22 +50,72 @@ func SortInt(data []int, lenght int) ([]IntMapper, []IntMapper, error) {
 
 	sortedValues := sort(values)
 
+	fmt.Printf("This is the sorted value: %v\n", sortedValues)
+
 	var sortedObj []IntMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
-	if len(sortedValues) > lenght {
-		// get the value fom the sorted values and retrieve the key from the obj
-		for i := 0; i < lenght; i++ {
+
+	if lenght == 0 {
+
+		for i := 0; i < len(sortedValues); i++ {
 			for _, x := range dataObjArray {
-				if x.Occurance == sortedValues[i] {
-					sortedObj = append(sortedObj, x)
+
+				if sortedObj == nil {
+					if x.Occurance == sortedValues[i] {
+						sortedObj = append(sortedObj, x)
+
+						fmt.Printf("This is the added value: %v\n", x.Key)
+					}
+				} else {
+					var available bool
+					for _, avail := range sortedObj {
+						if avail.Key == x.Key {
+							available = true
+						}
+					}
+
+					if !available {
+						if x.Occurance == sortedValues[i] {
+							sortedObj = append(sortedObj, x)
+							fmt.Printf("This is the added value: %v\n", x.Key)
+						}
+					}
 				}
+
 			}
 		}
-	} else {
-		return nil, nil, errors.New("sort times is greater than the numbers in array")
+
+	} else if len(sortedValues) > lenght {
+
+		for i := 0; i < lenght; i++ {
+			fmt.Printf("This is the sorted value at i index: %v\n", sortedValues[i])
+			for _, x := range dataObjArray {
+
+				if sortedObj == nil {
+					if x.Occurance == sortedValues[i] {
+						sortedObj = append(sortedObj, x)
+					}
+				} else {
+					var available bool
+					for _, avail := range sortedObj {
+						if avail.Key == x.Key {
+							available = true
+						}
+					}
+
+					if !available {
+						if x.Occurance == sortedValues[i] {
+							sortedObj = append(sortedObj, x)
+						}
+					}
+				}
+
+			}
+		}
+
 	}
 
-	return dataObjArray, sortedObj, nil
+	return sortedObj
 }
 
 type StringMapper struct {
@@ -75,27 +123,21 @@ type StringMapper struct {
 	Occurance int    `json:"occurance"`
 }
 
-func SortString(data []string, lenght int) ([]StringMapper, []StringMapper, error) {
+func SortString(data []string, lenght int) []StringMapper {
 	var occuranceCounter int
 	var dataObjArray []StringMapper
 	var dataObj StringMapper
 	var values []int
 	for _, v := range data {
-
-		//loop through the array and check the number of occurance of the digit
 		for _, occurance := range data {
-			//check if the current value is same as the top value and increment the number
 			if v == occurance {
-				newOccurance := occuranceCounter + 1
-				occuranceCounter = newOccurance
+				occuranceCounter += 1
 			}
 		}
 
 		if dataObjArray == nil {
-			//create a new object for the digit and its number of occurance
 			dataObj.Key = v
 			dataObj.Occurance = occuranceCounter
-			//append to the dataObjArray
 			dataObjArray = append(dataObjArray, dataObj)
 
 			// append it the key to the values arry for further sorting
@@ -111,7 +153,6 @@ func SortString(data []string, lenght int) ([]StringMapper, []StringMapper, erro
 			if !check {
 				dataObj.Key = v
 				dataObj.Occurance = occuranceCounter
-				//append to the dataObjArray
 				dataObjArray = append(dataObjArray, dataObj)
 
 				// append it the key to the values arry for further sorting
@@ -125,22 +166,74 @@ func SortString(data []string, lenght int) ([]StringMapper, []StringMapper, erro
 
 	sortedValues := sort(values)
 
+	fmt.Printf("This is the sorted value: %v\n", sortedValues)
+
 	var sortedObj []StringMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
-	if len(sortedValues) > lenght {
-		// get the value fom the sorted values and retrieve the key from the obj
-		for i := 0; i < lenght; i++ {
+
+	if lenght == 0 {
+
+		for i := 0; i < len(sortedValues); i++ {
 			for _, x := range dataObjArray {
-				if x.Occurance == sortedValues[i] {
-					sortedObj = append(sortedObj, x)
+
+				if sortedObj == nil {
+					if x.Occurance == sortedValues[i] {
+						sortedObj = append(sortedObj, x)
+
+						fmt.Printf("This is the added value: %v\n", x.Key)
+					}
+				} else {
+					var available bool
+					for _, avail := range sortedObj {
+						if avail.Key == x.Key {
+							available = true
+						}
+					}
+
+					if !available {
+						if x.Occurance == sortedValues[i] {
+							sortedObj = append(sortedObj, x)
+							fmt.Printf("This is the added value: %v\n", x.Key)
+						}
+					}
 				}
+
 			}
 		}
-	} else {
-		return nil, nil, errors.New("sort times is greater than the numbers in array")
+
+	} else if len(sortedValues) > lenght {
+
+		for i := 0; i < lenght; i++ {
+			fmt.Printf("This is the sorted value at i index: %v\n", sortedValues[i])
+			for _, x := range dataObjArray {
+
+				if sortedObj == nil {
+					if x.Occurance == sortedValues[i] {
+						sortedObj = append(sortedObj, x)
+						fmt.Printf("This is the first value added to the string array: %v\n", x.Key)
+					}
+				} else {
+					var available bool
+					for _, avail := range sortedObj {
+						if avail.Key == x.Key {
+							available = true
+						}
+					}
+
+					if !available {
+						if x.Occurance == sortedValues[i] {
+							sortedObj = append(sortedObj, x)
+							fmt.Printf("This is the other values added to the string array: %v\n", x.Key)
+						}
+					}
+				}
+
+			}
+		}
+
 	}
 
-	return dataObjArray, sortedObj, nil
+	return sortedObj
 }
 
 func sort(arr []int) []int {
