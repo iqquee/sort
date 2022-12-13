@@ -1,3 +1,4 @@
+![go](/static/img.gif)
 # Sort
 The sort package sorts data(both string and int) with their number of occurance and returns the desired lenght of data in descending order.
 # Installation
