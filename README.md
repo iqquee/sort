@@ -10,10 +10,8 @@ $ go get -u github.com/hisyntax/sort
 ```sh
 import "github.com/hisyntax/sort/x"
 ```
-## Note : Both methods in this package returns three (3) values:
+## Note : Both methods in this package returns one (1) value:
 - [x] The total sorted array objects.
-- [x] The sorted array object in descending order by the lenght passed.
-- [x] An error (if any) - An error is returned if the lenght passed is more than the total sorted array objects
 
 # Quick start
 ```sh
