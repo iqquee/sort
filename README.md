@@ -62,6 +62,7 @@ func main() {
 	arr := []string{"by", "me", "come", "by", "me", "hello", "hey", "hey", "me", "buy", "by", "come", "hello", "go"}
 
      //pass in the array to be sorted and the desired length of data to be returned in descending order
+	 //the lenght should be zero(0) if you want to get all the sorted data
 	sortedString := sort.SortString(arr, 3)
 	fmt.Printf("This is the sorted string data: %v\n", sortedString)
 
