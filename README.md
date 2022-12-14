@@ -2,7 +2,7 @@
 # Sort
 The sort package sorts data(both string and int) with their number of occurrences and returns the desired data length in descending order with no duplicates of values.
 # Use cases range from:
--  ### To implement a trending feature in an e-commerce platform.
+-  ### To implement a trending products feature in an e-commerce platform.
 -  ### To get the most ordered products e.t.c
 # Installation
 To install the sort package, you need to first install [Go](https://golang.org/) and set your Go workspace.
