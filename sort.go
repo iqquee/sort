@@ -46,7 +46,7 @@ func SortInt(data []int, lenght int) []IntMapper {
 		occuranceCounter = 0
 	}
 
-	sortedValues := sort(values)
+	sortedValues := sorter(values)
 
 	var sortedObj []IntMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
@@ -156,7 +156,7 @@ func SortString(data []string, lenght int) []StringMapper {
 		occuranceCounter = 0
 	}
 
-	sortedValues := sort(values)
+	sortedValues := sorter(values)
 
 	var sortedObj []StringMapper
 	var newSortedObj []StringMapper
@@ -226,7 +226,7 @@ func SortString(data []string, lenght int) []StringMapper {
 	return sortedObj
 }
 
-func sort(arr []int) []int {
+func sorter(arr []int) []int {
 	swapped := true
 
 	for swapped {
