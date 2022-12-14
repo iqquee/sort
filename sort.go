@@ -1,4 +1,4 @@
-package x
+package sort
 
 type IntMapper struct {
 	Key       int `json:"key"`

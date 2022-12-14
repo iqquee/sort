@@ -12,7 +12,7 @@ $ go get -u github.com/hisyntax/sort
 ```
 2. Import it in your code:
 ```sh
-import "github.com/hisyntax/sort/x"
+import "github.com/hisyntax/sort"
 ```
 ## Note : Both methods in this package returns one (1) value:
 - [x] The sorted array objects in descending order by the length specified.
@@ -31,7 +31,7 @@ package main
 import (
 	"fmt"
 
-	sorter "github.com/hisyntax/sort/x"
+	"github.com/hisyntax/sort"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     //pass in the array to be sorted and the desired length of data to be returned in descending order
     //the lenght should be zero(0) if you want to get all the sorted data
-	sortedInt := sorter.SortInt(arr, 3)
+	sortedInt := sort.SortInt(arr, 3)
 	fmt.Printf("This is the sorted int data: %v\n", sortedInt)
 
 }
@@ -54,7 +54,7 @@ package main
 import (
 	"fmt"
 
-	sorter "github.com/hisyntax/sort/x"
+	"github.com/hisyntax/sort"
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 	arr := []string{"by", "me", "come", "by", "me", "hello", "hey", "hey", "me", "buy", "by", "come", "hello", "go"}
 
      //pass in the array to be sorted and the desired length of data to be returned in descending order
-	sortedString := sorter.SortString(arr, 3)
+	sortedString := sort.SortString(arr, 3)
 	fmt.Printf("This is the sorted string data: %v\n", sortedString)
 
 }
