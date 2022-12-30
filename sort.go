@@ -49,6 +49,7 @@ func SortInt(data []int, lenght int) []IntMapper {
 	sortedValues := sorter(values)
 
 	var sortedObj []IntMapper
+	var newSortedObj []IntMapper
 	//check if the lenght of sorted value is not more than the number of the sorted value array
 
 	if lenght == 0 {
@@ -81,15 +82,16 @@ func SortInt(data []int, lenght int) []IntMapper {
 	} else if len(sortedValues) > lenght {
 
 		for i := 0; i < lenght; i++ {
+
 			for _, x := range dataObjArray {
 
-				if sortedObj == nil {
+				if newSortedObj == nil {
 					if x.Occurance == sortedValues[i] {
-						sortedObj = append(sortedObj, x)
+						newSortedObj = append(newSortedObj, x)
 					}
 				} else {
 					var available bool
-					for _, avail := range sortedObj {
+					for _, avail := range newSortedObj {
 						if avail.Key == x.Key {
 							available = true
 						}
@@ -97,12 +99,16 @@ func SortInt(data []int, lenght int) []IntMapper {
 
 					if !available {
 						if x.Occurance == sortedValues[i] {
-							sortedObj = append(sortedObj, x)
+							newSortedObj = append(newSortedObj, x)
 						}
 					}
 				}
 
 			}
+		}
+
+		for i := 0; i < lenght; i++ {
+			sortedObj = append(sortedObj, newSortedObj[i])
 		}
 
 	}
