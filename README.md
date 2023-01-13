@@ -8,11 +8,11 @@ The sort package sorts data(both string and int) with their number of occurrence
 To install the sort package, you need to first install [Go](https://golang.org/) and set your Go workspace.
 1. You can use the below Go command to install sort
 ```sh
-$ go get -u github.com/hisyntax/sort
+$ go get -u github.com/iqquee/sort
 ```
 2. Import it in your code:
 ```sh
-import "github.com/hisyntax/sort"
+import "github.com/iqquee/sort"
 ```
 ## Note : Both methods in this package returns one (1) value:
 - [x] The sorted array objects in descending order by the length specified.
@@ -31,7 +31,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hisyntax/sort"
+	"github.com/iqquee/sort"
 )
 
 func main() {
@@ -54,7 +54,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hisyntax/sort"
+	"github.com/iqquee/sort"
 )
 
 func main() {

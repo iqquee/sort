@@ -1,3 +1,3 @@
-module github.com/hisyntax/sort
+module github.com/iqquee/sort
 
 go 1.19
